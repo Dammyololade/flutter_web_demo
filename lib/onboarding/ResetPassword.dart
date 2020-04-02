@@ -2,6 +2,7 @@ import 'package:code_brew/code_brew.dart';
 import 'package:dewalletvendor/custom/BaseStatefulWidget.dart';
 import 'package:dewalletvendor/custom/NovuWidget.dart';
 import 'package:dewalletvendor/custom/PasswordField.dart';
+import 'package:dewalletvendor/helpers/RouteConfig.dart';
 import 'package:dewalletvendor/repositories/OnBoardingRepository.dart';
 import 'package:flutter/material.dart';
 import 'package:the_validator/the_validator.dart';
@@ -140,15 +141,14 @@ class _ResetPasswordState extends State<ResetPassword> with UiKits, BaseStateful
     progressNotifier.value = true;
     var params = {
       "email": email,
-      "password": _newPasswordController.text,
+      "new_password": _newPasswordController.text,
       "confirm_password": _confirmPasswordController.text,
       "otp": _otpController.text
     };
     var response = await OnBoardingRepository().resetPassword(params);
     progressNotifier.value = false;
     if(response.success) {
-      Navigator.of(context).pushReplacementNamed(
-          "/home");
+      Navigator.of(context).pushReplacementNamed(RouteConfig.LOGIN);
     } else {
       showBottomNotification(context, message: response.message);
     }

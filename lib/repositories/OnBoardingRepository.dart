@@ -63,6 +63,7 @@ class OnBoardingRepository {
       if(response?.statusCode == 200){
         model.success = true;
       } else {
+        model.success = false;
         model.message = CBUtility.extractErrorMessageFromResponse(response);
       }
     } catch (error, stackTrace) {
