@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       initialRoute: RouteConfig.LOGIN,
-      home: LoginScreen(),
+      home: SessionManager.isLoggedIn ? HomeScreen() : LoginScreen(),
       routes: RouteConfig().routes(),
     );
   }

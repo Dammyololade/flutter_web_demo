@@ -1,4 +1,5 @@
 import 'package:dewalletvendor/helpers/SessionManager.dart';
+import 'package:dewalletvendor/ui/OrderListWidget.dart';
 import 'package:dewalletvendor/ui/SideNav.dart';
 import 'package:flutter/material.dart';
 
@@ -28,28 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             SideNav(),
             Expanded(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'You have pushed the button this many times:',
-                    ),
-                    Text(
-                      '$_counter',
-                      style: Theme.of(context).textTheme.headline4,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+              child: OrderListWidget(),
+            )
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
-          tooltip: 'Increment',
-          child: Icon(Icons.add),
-        ));
+    );
   }
 
   void _incrementCounter() {

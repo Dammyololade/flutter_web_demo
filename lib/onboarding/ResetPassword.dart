@@ -125,7 +125,9 @@ class _ResetPasswordState extends State<ResetPassword> with UiKits, BaseStateful
                               _submit();
                             }
                           }, bgColor: AppConfig.APP_BUTTON_COLOR)
-                      )
+                      ),
+                       
+                      PaginatedDataTable(header: null, columns: null, source: null)
                     ],
                   ),
                 ),

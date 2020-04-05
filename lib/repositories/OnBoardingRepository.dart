@@ -28,6 +28,7 @@ class OnBoardingRepository {
         SessionManager.email = vendor.email;
         SessionManager.address = vendor.address;
         SessionManager.businessName = vendor.businessName;
+        SessionManager.isLoggedIn = true;
       } else {
         model.message = CBUtility.extractErrorMessageFromResponse(response);
       }

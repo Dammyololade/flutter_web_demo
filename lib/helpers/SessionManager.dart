@@ -20,6 +20,7 @@ class SessionManager {
   static const String KEY_BIZ_NAME = 'biz_name';
   static const String KEY_MOBILE = 'mobile';
   static const String KEY_ADDRESS = 'address';
+  static const String KEY_IS_LOGGED_IN = 'is_logged_in';
 
 
   static set userId(String userId) => sharedPreferences.setString(KEY_USER_ID, userId);
@@ -39,4 +40,7 @@ class SessionManager {
 
   static String get address => sharedPreferences.getString(KEY_ADDRESS) ?? '';
   static set address(String address) => sharedPreferences.setString(KEY_ADDRESS, address);
+
+  static bool get isLoggedIn => sharedPreferences.getBool(KEY_IS_LOGGED_IN) ?? false;
+  static set isLoggedIn(bool value) => sharedPreferences.setBool(KEY_IS_LOGGED_IN, value);
 }

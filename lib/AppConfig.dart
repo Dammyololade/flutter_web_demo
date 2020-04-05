@@ -18,5 +18,6 @@ class AppConfig {
   static const String LOGIN_API = BASE_URL + "vendor/login";
   static const String INIT_RESET_PASSWORD_API = BASE_URL + "vendor/password/init";
   static const String REST_PASSWORD_API = BASE_URL + "vendor/password/reset";
+  static const String ALL_ORDER_API = BASE_URL + "order/paginated";
 
 }
