@@ -11,7 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SessionManager.init();
-  await CBSessionManager.init();
+  await CBSessionManager().init();
 
   runApp(MyApp());
 }

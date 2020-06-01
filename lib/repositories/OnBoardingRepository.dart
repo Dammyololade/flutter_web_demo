@@ -23,7 +23,7 @@ class OnBoardingRepository {
       print(response);
       if(response?.statusCode == 200) {
         model = LoginModel.fromJson(response.data);
-        CBSessionManager.authToken = model.data.token;
+        //CBSessionManager.authToken = model.data.token;
         Vendor vendor = model.data.vendor;
         SessionManager.email = vendor.email;
         SessionManager.address = vendor.address;
